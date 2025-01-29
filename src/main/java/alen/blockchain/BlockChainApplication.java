@@ -1,21 +1,33 @@
 package alen.blockchain;
 
 import alen.blockchain.noobchain.Transaction;
+import alen.blockchain.noobchain.TransactionOutput;
 import alen.blockchain.noobchain.Wallet;
 import com.google.gson.GsonBuilder;
 import java.util.Base64;
 import java.security.Security;
+
+import lombok.Getter;
+import lombok.Setter;
+import java.util.HashMap;
+import java.util.Map;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 
+@Getter
+@Setter
 @SpringBootApplication
 public class BlockChainApplication {
 
+    public static HashMap<String, TransactionOutput> UTXOs = new HashMap<String,TransactionOutput>(); //list of all unspent transactions.
     public static int difficulty = 5;
+    public static float minimumTransaction = 0.1f;
     public static Wallet walletA;
     public static Wallet walletB;
+    public static Transaction genesisTransaction;
+
 
 
     public static void main(String[] args) {
