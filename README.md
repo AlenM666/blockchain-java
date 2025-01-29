@@ -1,7 +1,5 @@
 # blockchain-java
 
-# Getting Started
-
 <br>
 
 A simple Java Blockchain app.
